@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sky Inn Jambi | Luxury Stay</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090909;
+    color:#f5f1e9;
+    font-family:"DM Sans",sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.4s ease;
+}
+
+nav.scrolled{
+    background:rgba(8,8,8,.88);
+    backdrop-filter:blur(18px);
+    padding:16px 7%;
+    border-bottom:1px solid rgba(201,169,106,.15);
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    letter-spacing:4px;
+}
+
+.logo span{
+    color:#c9a96a;
+}
+
+.menu{
+    display:flex;
+    gap:32px;
+    list-style:none;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.menu a{
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#c9a96a;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.9)
+        ),
+        url("IMG-20260930-WA0046.jpg") center/cover no-repeat;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 7% 10vh;
+    max-width:900px;
+}
+
+.eyebrow{
+    color:#d4b575;
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-family:"Playfair Display",serif;
+    font-weight:500;
+    font-size:clamp(60px,9vw,120px);
+    line-height:.88;
+    margin:18px 0;
+}
+
+h1 i{
+    color:#d4b575;
+}
+
+.hero p{
+    max-width:600px;
+    color:#ddd7cc;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    border:1px solid #c9a96a;
+    padding:14px 25px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c9a96a;
+    color:#111;
+}
+
+/* GENERAL */
+
+section{
+    padding:110px 7%;
+}
+
+.kicker{
+    color:#c9a96a;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:10px;
+    margin-bottom:15px;
+}
+
+h2{
+    font-family:"Playfair Display",serif;
+    font-weight:500;
+    font-size:clamp(38px,5vw,65px);
+    line-height:1.05;
+}
+
+.muted{
+    color:#a8a198;
+    margin-top:18px;
+    max-width:650px;
+    line-height:1.7;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    background:#11110f;
+}
+
+.about-image{
+    height:550px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.25)
+        ),
+        url("IMG-20260930-WA0047.jpg") center/cover no-repeat;
+}
+
+.about-text p{
+    color:#bbb5ab;
+    margin:25px 0;
+    line-height:1.8;
+}
+
+.stats{
+    display:flex;
+    gap:45px;
+    margin-top:35px;
+}
+
+.stat strong{
+    display:block;
+    color:#d4b674;
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+}
+
+.stat span{
+    color:#888;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/* ROOMS */
+
+.rooms{
+    background:#090909;
+}
+
+.section-head{
+    max-width:700px;
+    margin-bottom:45px;
+}
+
+.room-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.room{
+    background:#151512;
+    overflow:hidden;
+}
+
+.room-image{
+    height:330px;
+    background-size:cover;
+    background-position:center;
+    transition:.6s ease;
+}
+
+.room:hover .room-image{
+    transform:scale(1.05);
+}
+
+.room-body{
+    padding:25px;
+}
+
+.room-body h3{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:9px;
+}
+
+.room-body p{
+    color:#999;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* DINING */
+
+.dining{
+    padding:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#151512;
+}
+
+.dining-image{
+    min-height:560px;
+
+    background:
+        url("IMG-20260930-WA0055.jpg") center/cover no-repeat;
+}
+
+.dining-text{
+    padding:75px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.dining-text p{
+    color:#aaa;
+    margin:22px 0 30px;
+    max-width:500px;
+    line-height:1.8;
+}
+
+/* FEATURES */
+
+.features-section{
+    background:#0b0b0a;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:45px;
+}
+
+.feature{
+    background:#11110f;
+    border-top:1px solid #3a342a;
+    padding:28px 22px;
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+    border-color:#c9a96a;
+}
+
+.feature b{
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    font-weight:500;
+}
+
+.feature p{
+    color:#918c84;
+    font-size:12px;
+    margin-top:10px;
+    line-height:1.6;
+}
+
+/* QUOTE */
+
+.quote{
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.5),
+            rgba(0,0,0,.9)
+        ),
+        url("IMG-20260930-WA0051.jpg") center/cover no-repeat;
+}
+
+blockquote{
+    max-width:900px;
+    margin:auto;
+
+    font-family:"Playfair Display",serif;
+    font-size:clamp(30px,5vw,58px);
+    line-height:1.15;
+}
+
+.quote small{
+    display:block;
+    color:#c9a96a;
+    margin-top:25px;
+    letter-spacing:4px;
+}
+
+/* LOCATION */
+
+.location-section{
+    background:#11110f;
+}
+
+.location{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.map{
+    min-height:390px;
+    border:1px solid #2d2a24;
+
+    display:grid;
+    place-items:center;
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle,
+            #3b352a 1px,
+            transparent 2px
+        ),
+        #10100e;
+
+    background-size:35px 35px;
+}
+
+.map strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+}
+
+.map span{
+    color:#c9a96a;
+    font-size:10px;
+    letter-spacing:4px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:45px 7%;
+    border-top:1px solid #28251f;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#77736c;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav{
+        padding:20px 6%;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .hero{
+        min-height:650px;
+    }
+
+    .hero-content{
+        padding:0 7% 11vh;
+    }
+
+    section{
+        padding:80px 7%;
+    }
+
+    .about,
+    .dining,
+    .location{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        height:380px;
+    }
+
+    .dining-image{
+        min-height:350px;
+    }
+
+    .dining-text{
+        padding:60px 7%;
+    }
+
+    .room-grid{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats{
+        gap:20px;
+    }
+
+    .stat strong{
+        font-size:27px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav id="navbar">
+
+    <a href="#" class="logo">
+        SKY <span>INN</span>
+    </a>
+
+    <ul class="menu">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#rooms">ROOMS</a></li>
+        <li><a href="#dining">DINING</a></li>
+        <li><a href="#location">LOCATION</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Urban & Classic · Jambi
+        </div>
+
+        <h1>
+            Stay<br>
+            <i>Elevated.</i>
+        </h1>
+
+        <p>
+            Pengalaman menginap yang nyaman
+            dengan sentuhan modern, elegan,
+            dan berkelas di Kota Jambi.
+        </p>
+
+        <a href="#about" class="btn">
+            Discover Sky Inn
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-image"></div>
+
+    <div class="about-text">
+
+        <div class="kicker">
+            The Hotel
+        </div>
+
+        <h2>
+            Simple luxury,<br>
+            made personal.
+        </h2>
+
+        <p>
+            Sky Inn Jambi menghadirkan perpaduan
+            gaya modern dan suasana nyaman untuk
+            membuat setiap perjalanan terasa lebih
+            istimewa.
+        </p>
+
+        <p>
+            Tempat yang cocok untuk beristirahat,
+            menikmati waktu bersama keluarga,
+            maupun perjalanan bisnis di Jambi.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>24H</strong>
+                <span>Service</span>
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                <span>Comfort</span>
+            </div>
+
+            <div class="stat">
+                <strong>JMB</strong>
+                <span>Jambi</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ROOMS -->
+
+<section class="rooms" id="rooms">
+
+    <div class="section-head">
+
+        <div class="kicker">
+            Stay
+        </div>
+
+        <h2>
+            Rooms & Suites
+        </h2>
+
+        <p class="muted">
+            Ruang yang tenang, modern, dan nyaman
+            untuk perjalanan bisnis maupun waktu
+            istirahat Anda.
+        </p>
+
+    </div>
+
+
+    <div class="room-grid">
+
+        <!-- ROOM 1 -->
+
+        <article class="room">
+
+            <div
+                class="room-image"
+                style="background-image:url('IMG-20260930-WA0048.jpg');">
+            </div>
+
+            <div class="room-body">
+
+                <h3>
+                    Superior Room
+                </h3>
+
+                <p>
+                    Ruang nyaman dengan suasana
+                    modern untuk kebutuhan menginap
+                    sehari-hari.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ROOM 2 -->
+
+        <article class="room">
+
+            <div
+                class="room-image"
+                style="background-image:url('IMG-20260930-WA0049.jpg');">
+            </div>
+
+            <div class="room-body">
+
+                <h3>
+                    Deluxe Room
+                </h3>
+
+                <p>
+                    Ruang yang lebih luas dengan
+                    suasana modern dan nyaman.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ROOM 3 -->
+
+        <article class="room">
+
+            <div
+                class="room-image"
+                style="background-image:url('IMG-20260930-WA0051.jpg');">
+            </div>
+
+            <div class="room-body">
+
+                <h3>
+                    Premium Stay
+                </h3>
+
+                <p>
+                    Pengalaman menginap yang nyaman
+                    dengan ambience yang lebih premium.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- DINING -->
+
+<section class="dining" id="dining">
+
+    <div class="dining-image"></div>
+
+    <div class="dining-text">
+
+        <div class="kicker">
+            Dining
+        </div>
+
+        <h2>
+            Dine above<br>
+            the ordinary.
+        </h2>
+
+        <p>
+            Nikmati waktu santai dengan suasana
+            yang nyaman dan modern di Sky Inn Jambi.
+        </p>
+
+        <a href="#location" class="btn">
+            Explore
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features-section">
+
+    <div class="section-head">
+
+        <div class="kicker">
+            Experience
+        </div>
+
+        <h2>
+            Everything you need.
+        </h2>
+
+        <p class="muted">
+            Dirancang untuk memberikan pengalaman
+            menginap yang nyaman dari awal hingga akhir.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+            <b>01 · Comfort</b>
+            <p>
+                Ruang nyaman untuk beristirahat
+                setelah perjalanan.
+            </p>
+        </div>
+
+        <div class="feature">
+            <b>02 · Dining</b>
+            <p>
+                Nikmati waktu santai dengan
+                suasana yang menyenangkan.
+            </p>
+        </div>
+
+        <div class="feature">
+            <b>03 · Wi-Fi</b>
+            <p>
+                Koneksi untuk kebutuhan kerja
+                dan hiburan.
+            </p>
+        </div>
+
+        <div class="feature">
+            <b>04 · Service</b>
+            <p>
+                Pelayanan yang siap membantu
+                kebutuhan tamu.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <blockquote>
+        “A refined stay in the heart of Jambi.”
+    </blockquote>
+
+    <small>
+        SKY INN JAMBI
+    </small>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location-section" id="location">
+
+    <div class="location">
+
+        <div>
+
+            <div class="kicker">
+                Find Us
+            </div>
+
+            <h2>
+                In the heart<br>
+                of Jambi.
+            </h2>
+
+            <p class="muted">
+                Sky Inn Jambi · Jambi, Indonesia
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Sky+Inn+Jambi"
+                target="_blank"
+                class="btn">
+                Open Maps
+            </a>
+
+        </div>
+
+
+        <div class="map">
+
+            <div>
+
+                <strong>
+                    SKY INN
+                </strong>
+
+                <span>
+                    JAMBI · INDONESIA
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        © 2026 SKY INN JAMBI
+    </div>
+
+    <div>
+        Urban & Classic Hospitality
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 40){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+</script>
+
+</body>
+  </html>
+  
